@@ -5,19 +5,18 @@ import re
 # Link to your Tesseract executable
 pytesseract.pytesseract.tesseract_cmd = r'C:\Users\Brad\AppData\Local\Programs\Tesseract-OCR\tesseract.exe'
 
-# Load the image
+
 image = cv2.imread('car.jpg')
 
-# Convert to grayscale
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
-# Optional: improve contrast
+
 gray = cv2.bilateralFilter(gray, 11, 17, 17)
 
-# Edge detection
+
 edged = cv2.Canny(gray, 30, 200)
 
-# Find contours
+
 contours, _ = cv2.findContours(edged.copy(), cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 contours = sorted(contours, key=cv2.contourArea, reverse=True)[:10]
 
