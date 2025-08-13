@@ -5,3 +5,5 @@ to launch - run python main.py after installing required dependencies(cv2,pytess
 project by bradley lenaiyarra.
 
 free to use and modify.
+
+contact on instagram - @lenaiyarra_brad for detailed explanation
